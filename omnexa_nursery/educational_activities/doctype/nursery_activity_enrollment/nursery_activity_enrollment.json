@@ -1,0 +1,69 @@
+{
+	"actions": [],
+	"creation": "2026-05-04 00:00:00",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": ["company", "student", "activity", "enrollment_date", "monthly_fee", "status"],
+	"fields": [
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"fieldname": "student",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Student",
+			"options": "Nursery Student",
+			"reqd": 1
+		},
+		{
+			"fieldname": "activity",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Activity",
+			"options": "Nursery Educational Activity",
+			"reqd": 1
+		},
+		{
+			"default": "Today",
+			"fieldname": "enrollment_date",
+			"fieldtype": "Date",
+			"label": "Enrollment Date",
+			"reqd": 1
+		},
+		{
+			"fieldname": "monthly_fee",
+			"fieldtype": "Currency",
+			"label": "Monthly Fee"
+		},
+		{
+			"default": "Active",
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"label": "Status",
+			"options": "Active\nSuspended\nEnded"
+		}
+	],
+	"links": [],
+	"modified": "2026-05-04 00:00:00",
+	"module": "Educational Activities",
+	"name": "Nursery Activity Enrollment",
+	"owner": "Administrator",
+	"permissions": [
+		{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+		{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Administrator", "share": 1, "write": 1},
+		{"create": 1, "delete": 0, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Reception", "share": 1, "write": 1},
+		{"create": 0, "delete": 0, "email": 0, "export": 0, "print": 1, "read": 1, "report": 1, "role": "Nursery Teacher", "share": 0, "write": 0},
+		{"create": 0, "delete": 0, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Accountant", "share": 0, "write": 1}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 1
+}

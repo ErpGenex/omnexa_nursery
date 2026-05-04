@@ -1,0 +1,162 @@
+{
+	"actions": [],
+	"creation": "2026-05-04 00:00:00",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"company",
+		"setup_complete",
+		"billing_section",
+		"auto_bill_enabled",
+		"default_branch",
+		"default_tax_rule",
+		"invoice_due_days",
+		"wizard_section",
+		"nursery_name",
+		"logo",
+		"address",
+		"license_no",
+		"phone",
+		"email",
+		"programs_section",
+		"programs",
+		"notes_section",
+		"notes"
+	],
+	"fields": [
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"default": "0",
+			"fieldname": "setup_complete",
+			"fieldtype": "Check",
+			"label": "Setup Complete"
+		},
+		{
+			"fieldname": "billing_section",
+			"fieldtype": "Section Break",
+			"label": "Billing (Sales Invoice)"
+		},
+		{
+			"default": "1",
+			"description": "When enabled, the monthly scheduler creates Sales Invoices in omnexa_accounting.",
+			"fieldname": "auto_bill_enabled",
+			"fieldtype": "Check",
+			"label": "Auto Monthly Billing"
+		},
+		{
+			"fieldname": "default_branch",
+			"fieldtype": "Link",
+			"label": "Default Branch",
+			"options": "Branch"
+		},
+		{
+			"fieldname": "default_tax_rule",
+			"fieldtype": "Link",
+			"label": "Default Tax Rule",
+			"options": "Tax Rule"
+		},
+		{
+			"default": "15",
+			"fieldname": "invoice_due_days",
+			"fieldtype": "Int",
+			"label": "Invoice Due (Days after posting)"
+		},
+		{
+			"fieldname": "wizard_section",
+			"fieldtype": "Section Break",
+			"label": "Nursery Profile"
+		},
+		{
+			"fieldname": "nursery_name",
+			"fieldtype": "Data",
+			"label": "Nursery Name",
+			"reqd": 1
+		},
+		{
+			"fieldname": "logo",
+			"fieldtype": "Attach Image",
+			"label": "Logo"
+		},
+		{
+			"fieldname": "address",
+			"fieldtype": "Small Text",
+			"label": "Address"
+		},
+		{
+			"fieldname": "license_no",
+			"fieldtype": "Data",
+			"label": "License Number"
+		},
+		{
+			"fieldname": "phone",
+			"fieldtype": "Data",
+			"label": "Phone"
+		},
+		{
+			"fieldname": "email",
+			"fieldtype": "Data",
+			"label": "Email",
+			"options": "Email"
+		},
+		{
+			"fieldname": "programs_section",
+			"fieldtype": "Section Break",
+			"label": "Educational Programs"
+		},
+		{
+			"description": "Programs enabled for this nursery (dynamic module activation per roadmap).",
+			"fieldname": "programs",
+			"fieldtype": "Table",
+			"label": "Enabled Programs",
+			"options": "Nursery Enabled Program"
+		},
+		{
+			"fieldname": "notes_section",
+			"fieldtype": "Section Break",
+			"label": "Notes"
+		},
+		{
+			"fieldname": "notes",
+			"fieldtype": "Text Editor",
+			"label": "Internal Notes"
+		}
+	],
+	"issingle": 1,
+	"links": [],
+	"modified": "2026-05-04 00:00:00",
+	"modified_by": "Administrator",
+	"module": "Nursery Setup",
+	"name": "Nursery Settings",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"print": 1,
+			"read": 1,
+			"role": "System Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"delete": 0,
+			"email": 1,
+			"print": 1,
+			"read": 1,
+			"role": "Nursery Administrator",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": []
+}

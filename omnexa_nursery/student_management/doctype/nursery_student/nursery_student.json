@@ -1,0 +1,195 @@
+{
+	"actions": [],
+	"allow_import": 1,
+	"autoname": "NS-.#####",
+	"creation": "2026-05-04 00:00:00",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"company",
+		"student_id",
+		"section_personal",
+		"full_name_ar",
+		"full_name_en",
+		"column_br_1",
+		"gender",
+		"birth_date",
+		"age_years",
+		"age_group",
+		"class_room",
+		"profile_image",
+		"joining_date",
+		"status",
+		"section_medical",
+		"allergies",
+		"blood_group",
+		"emergency_contact_name",
+		"emergency_contact_phone",
+		"section_parent",
+		"primary_parent",
+		"section_documents",
+		"birth_certificate",
+		"section_progress",
+		"progress_notes"
+	],
+	"fields": [
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"fieldname": "student_id",
+			"fieldtype": "Data",
+			"label": "Student ID",
+			"read_only": 1
+		},
+		{
+			"fieldname": "section_personal",
+			"fieldtype": "Section Break",
+			"label": "Personal Data"
+		},
+		{
+			"fieldname": "full_name_ar",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Full Name (AR)",
+			"reqd": 1
+		},
+		{
+			"fieldname": "full_name_en",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Full Name (EN)"
+		},
+		{
+			"fieldname": "column_br_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "gender",
+			"fieldtype": "Select",
+			"label": "Gender",
+			"options": "Male\nFemale"
+		},
+		{
+			"fieldname": "birth_date",
+			"fieldtype": "Date",
+			"label": "Birth Date"
+		},
+		{
+			"fieldname": "age_years",
+			"fieldtype": "Int",
+			"label": "Age (Years)",
+			"read_only": 1
+		},
+		{
+			"fieldname": "age_group",
+			"fieldtype": "Select",
+			"label": "Age Group",
+			"options": "Infant\nToddler\nPre-K\nKG1\nKG2"
+		},
+		{
+			"fieldname": "class_room",
+			"fieldtype": "Data",
+			"label": "Class / Room"
+		},
+		{
+			"fieldname": "profile_image",
+			"fieldtype": "Attach Image",
+			"label": "Profile Image"
+		},
+		{
+			"default": "Today",
+			"fieldname": "joining_date",
+			"fieldtype": "Date",
+			"label": "Joining Date"
+		},
+		{
+			"default": "Active",
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"in_list_view": 1,
+			"label": "Status",
+			"options": "Draft\nActive\nWaiting\nSuspended\nGraduated"
+		},
+		{
+			"fieldname": "section_medical",
+			"fieldtype": "Section Break",
+			"label": "Medical Data"
+		},
+		{
+			"fieldname": "allergies",
+			"fieldtype": "Small Text",
+			"label": "Allergies & Dietary Notes"
+		},
+		{
+			"fieldname": "blood_group",
+			"fieldtype": "Data",
+			"label": "Blood Group"
+		},
+		{
+			"fieldname": "emergency_contact_name",
+			"fieldtype": "Data",
+			"label": "Emergency Contact Name"
+		},
+		{
+			"fieldname": "emergency_contact_phone",
+			"fieldtype": "Data",
+			"label": "Emergency Contact Phone"
+		},
+		{
+			"fieldname": "section_parent",
+			"fieldtype": "Section Break",
+			"label": "Parent / Guardian"
+		},
+		{
+			"fieldname": "primary_parent",
+			"fieldtype": "Link",
+			"label": "Primary Parent Profile",
+			"options": "Nursery Parent Profile"
+		},
+		{
+			"fieldname": "section_documents",
+			"fieldtype": "Section Break",
+			"label": "Documents"
+		},
+		{
+			"fieldname": "birth_certificate",
+			"fieldtype": "Attach",
+			"label": "Birth Certificate"
+		},
+		{
+			"fieldname": "section_progress",
+			"fieldtype": "Section Break",
+			"label": "Educational Progress"
+		},
+		{
+			"fieldname": "progress_notes",
+			"fieldtype": "Text Editor",
+			"label": "Progress Notes"
+		}
+	],
+	"index_web_pages_for_search": 1,
+	"links": [],
+	"modified": "2026-05-04 00:00:00",
+	"modified_by": "Administrator",
+	"module": "Student Management",
+	"name": "Nursery Student",
+	"owner": "Administrator",
+	"naming_rule": "Expression (old style)",
+	"permissions": [
+		{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+		{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Administrator", "share": 1, "write": 1},
+		{"create": 1, "delete": 0, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Reception", "share": 1, "write": 1},
+		{"create": 0, "delete": 0, "email": 0, "export": 0, "print": 1, "read": 1, "report": 1, "role": "Nursery Teacher", "share": 0, "write": 1},
+		{"create": 0, "delete": 0, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Accountant", "share": 0, "write": 0}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 1
+}

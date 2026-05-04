@@ -1,0 +1,117 @@
+{
+	"actions": [],
+	"allow_import": 1,
+	"autoname": "PR-.#####",
+	"creation": "2026-05-04 00:00:00",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"company",
+		"customer",
+		"father_name",
+		"mother_name",
+		"phone_1",
+		"phone_2",
+		"whatsapp",
+		"email",
+		"occupation",
+		"national_id",
+		"address",
+		"linked_students_section",
+		"linked_students"
+	],
+	"fields": [
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"fieldname": "customer",
+			"fieldtype": "Link",
+			"label": "Billing Customer",
+			"options": "Customer"
+		},
+		{
+			"fieldname": "father_name",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Father Name",
+			"reqd": 1
+		},
+		{
+			"fieldname": "mother_name",
+			"fieldtype": "Data",
+			"label": "Mother Name"
+		},
+		{
+			"fieldname": "phone_1",
+			"fieldtype": "Data",
+			"label": "Phone 1"
+		},
+		{
+			"fieldname": "phone_2",
+			"fieldtype": "Data",
+			"label": "Phone 2"
+		},
+		{
+			"fieldname": "whatsapp",
+			"fieldtype": "Data",
+			"label": "WhatsApp"
+		},
+		{
+			"fieldname": "email",
+			"fieldtype": "Data",
+			"label": "Email",
+			"options": "Email"
+		},
+		{
+			"fieldname": "occupation",
+			"fieldtype": "Data",
+			"label": "Occupation"
+		},
+		{
+			"fieldname": "national_id",
+			"fieldtype": "Data",
+			"label": "National ID"
+		},
+		{
+			"fieldname": "address",
+			"fieldtype": "Small Text",
+			"label": "Address"
+		},
+		{
+			"fieldname": "linked_students_section",
+			"fieldtype": "Section Break",
+			"label": "Linked Students"
+		},
+		{
+			"fieldname": "linked_students",
+			"fieldtype": "Table",
+			"label": "Students",
+			"options": "Nursery Parent Student Link",
+			"reqd": 0
+		}
+	],
+	"index_web_pages_for_search": 1,
+	"links": [],
+	"modified": "2026-05-04 00:00:00",
+	"module": "Parent Management",
+	"name": "Nursery Parent Profile",
+	"naming_rule": "Expression (old style)",
+	"owner": "Administrator",
+	"permissions": [
+		{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+		{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Administrator", "share": 1, "write": 1},
+		{"create": 1, "delete": 0, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Reception", "share": 1, "write": 1},
+		{"create": 0, "delete": 0, "email": 0, "export": 0, "print": 1, "read": 1, "report": 1, "role": "Nursery Teacher", "share": 0, "write": 0},
+		{"create": 0, "delete": 0, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Accountant", "share": 0, "write": 1}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 1
+}

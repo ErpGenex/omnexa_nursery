@@ -1,0 +1,82 @@
+{
+	"actions": [],
+	"creation": "2026-05-04 00:00:00",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"company",
+		"activity_name",
+		"activity_type",
+		"category",
+		"minimum_age",
+		"maximum_age",
+		"monthly_fee",
+		"active"
+	],
+	"fields": [
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"fieldname": "activity_name",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Activity Name",
+			"reqd": 1
+		},
+		{
+			"fieldname": "activity_type",
+			"fieldtype": "Select",
+			"label": "Activity Type",
+			"options": "Educational Nursery\nMontessori\nLanguages\nQuran Memorization\nSTEM for Kids\nFine Arts\nMixed",
+			"reqd": 1
+		},
+		{
+			"fieldname": "category",
+			"fieldtype": "Data",
+			"label": "Category"
+		},
+		{
+			"fieldname": "minimum_age",
+			"fieldtype": "Int",
+			"label": "Minimum Age"
+		},
+		{
+			"fieldname": "maximum_age",
+			"fieldtype": "Int",
+			"label": "Maximum Age"
+		},
+		{
+			"fieldname": "monthly_fee",
+			"fieldtype": "Currency",
+			"label": "Monthly Fee"
+		},
+		{
+			"default": "1",
+			"fieldname": "active",
+			"fieldtype": "Check",
+			"in_list_view": 1,
+			"label": "Active"
+		}
+	],
+	"links": [],
+	"modified": "2026-05-04 00:00:00",
+	"module": "Educational Activities",
+	"name": "Nursery Educational Activity",
+	"owner": "Administrator",
+	"permissions": [
+		{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+		{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Administrator", "share": 1, "write": 1},
+		{"create": 0, "delete": 0, "email": 0, "export": 0, "print": 1, "read": 1, "report": 1, "role": "Nursery Teacher", "share": 0, "write": 0},
+		{"create": 0, "delete": 0, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Accountant", "share": 0, "write": 0}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 1
+}

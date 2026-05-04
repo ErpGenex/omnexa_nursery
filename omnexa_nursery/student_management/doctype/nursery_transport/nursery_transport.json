@@ -1,0 +1,79 @@
+{
+	"actions": [],
+	"creation": "2026-05-04 00:00:00",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"company",
+		"route_name",
+		"vehicle",
+		"driver",
+		"supervisor",
+		"pickup_time",
+		"drop_time",
+		"notes"
+	],
+	"fields": [
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"fieldname": "route_name",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Route",
+			"reqd": 1
+		},
+		{
+			"fieldname": "vehicle",
+			"fieldtype": "Data",
+			"label": "Vehicle"
+		},
+		{
+			"fieldname": "driver",
+			"fieldtype": "Link",
+			"label": "Driver",
+			"options": "Employee"
+		},
+		{
+			"fieldname": "supervisor",
+			"fieldtype": "Link",
+			"label": "Supervisor",
+			"options": "Employee"
+		},
+		{
+			"fieldname": "pickup_time",
+			"fieldtype": "Time",
+			"label": "Pickup Time"
+		},
+		{
+			"fieldname": "drop_time",
+			"fieldtype": "Time",
+			"label": "Drop-off Time"
+		},
+		{
+			"fieldname": "notes",
+			"fieldtype": "Small Text",
+			"label": "Notes"
+		}
+	],
+	"links": [],
+	"modified": "2026-05-04 00:00:00",
+	"module": "Student Management",
+	"name": "Nursery Transport",
+	"owner": "Administrator",
+	"permissions": [
+		{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+		{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Administrator", "share": 1, "write": 1},
+		{"create": 0, "delete": 0, "email": 0, "export": 0, "print": 1, "read": 1, "report": 1, "role": "Nursery Teacher", "share": 0, "write": 0}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 1
+}

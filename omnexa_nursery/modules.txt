@@ -1,0 +1,8 @@
+Nursery Setup
+Student Management
+Parent Management
+Educational Activities
+Attendance
+Billing
+HR Integration
+Reports

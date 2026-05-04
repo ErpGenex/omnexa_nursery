@@ -1,0 +1,9 @@
+/* Soft educational palette — Desk overrides (light touch) */
+:root {
+	--nursery-primary: #7ec8e3;
+	--nursery-accent: #ffd6a5;
+}
+
+body[data-route="Workspaces/Nursery"] .layout-main-section {
+	border-radius: 8px;
+}

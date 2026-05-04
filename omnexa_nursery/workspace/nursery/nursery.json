@@ -1,0 +1,179 @@
+{
+	"charts": [],
+	"content": "[{\"id\": \"nur-h1\", \"type\": \"header\", \"data\": {\"text\": \"<div class=\\\"text-muted\\\">Nursery management: children, parents, activities, attendance, and billing. Configure <b>Nursery Settings</b> first.</div>\", \"col\": 12}}]",
+	"docstatus": 0,
+	"doctype": "Workspace",
+	"for_user": "",
+	"hide_custom": 0,
+	"icon": "heart",
+	"is_hidden": 0,
+	"label": "Nursery",
+	"links": [
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Setup",
+			"link_count": 0,
+			"onboard": 0,
+			"type": "Card Break"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Nursery Settings",
+			"link_count": 0,
+			"link_to": "Nursery Settings",
+			"link_type": "DocType",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "People",
+			"link_count": 0,
+			"onboard": 0,
+			"type": "Card Break"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Nursery Student",
+			"link_count": 0,
+			"link_to": "Nursery Student",
+			"link_type": "DocType",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Nursery Parent Profile",
+			"link_count": 0,
+			"link_to": "Nursery Parent Profile",
+			"link_type": "DocType",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Programs & Fees",
+			"link_count": 0,
+			"onboard": 0,
+			"type": "Card Break"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Nursery Educational Activity",
+			"link_count": 0,
+			"link_to": "Nursery Educational Activity",
+			"link_type": "DocType",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Nursery Activity Enrollment",
+			"link_count": 0,
+			"link_to": "Nursery Activity Enrollment",
+			"link_type": "DocType",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Nursery Fee Structure",
+			"link_count": 0,
+			"link_to": "Nursery Fee Structure",
+			"link_type": "DocType",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Operations",
+			"link_count": 0,
+			"onboard": 0,
+			"type": "Card Break"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Nursery Attendance",
+			"link_count": 0,
+			"link_to": "Nursery Attendance",
+			"link_type": "DocType",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Nursery Daily Observation",
+			"link_count": 0,
+			"link_to": "Nursery Daily Observation",
+			"link_type": "DocType",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Nursery Transport",
+			"link_count": 0,
+			"link_to": "Nursery Transport",
+			"link_type": "DocType",
+			"onboard": 0,
+			"type": "Link"
+		}
+	],
+	"modified": "2026-05-04 00:00:00",
+	"modified_by": "Administrator",
+	"module": "Nursery Setup",
+	"name": "Nursery",
+	"number_cards": [],
+	"owner": "Administrator",
+	"parent_page": "",
+	"public": 1,
+	"quick_lists": [],
+	"restrict_to_domain": "",
+	"roles": [
+		{"doctype": "Has Role", "role": "System Manager"},
+		{"doctype": "Has Role", "role": "Nursery Administrator"}
+	],
+	"sequence_id": 18.0,
+	"shortcuts": [
+		{
+			"color": "Blue",
+			"doc_view": "Form",
+			"format": "",
+			"icon": "setting",
+			"kanban_board": "",
+			"label": "Nursery Settings",
+			"link_to": "Nursery Settings",
+			"restrict_to_domain": "",
+			"stats_filter": "",
+			"type": "DocType",
+			"url": ""
+		},
+		{
+			"color": "Green",
+			"doc_view": "List",
+			"format": "",
+			"icon": "list",
+			"kanban_board": "",
+			"label": "Students",
+			"link_to": "Nursery Student",
+			"restrict_to_domain": "",
+			"stats_filter": "",
+			"type": "DocType",
+			"url": ""
+		}
+	],
+	"title": "Nursery"
+}

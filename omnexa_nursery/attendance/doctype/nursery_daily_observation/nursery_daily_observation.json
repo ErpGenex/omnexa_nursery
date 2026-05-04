@@ -1,0 +1,90 @@
+{
+	"actions": [],
+	"creation": "2026-05-04 00:00:00",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"company",
+		"log_date",
+		"student",
+		"teacher",
+		"behavior",
+		"eating_status",
+		"nap_status",
+		"health_notes",
+		"parent_note"
+	],
+	"fields": [
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"default": "Today",
+			"fieldname": "log_date",
+			"fieldtype": "Date",
+			"in_list_view": 1,
+			"label": "Date",
+			"reqd": 1
+		},
+		{
+			"fieldname": "student",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Student",
+			"options": "Nursery Student",
+			"reqd": 1
+		},
+		{
+			"fieldname": "teacher",
+			"fieldtype": "Link",
+			"label": "Teacher / Staff",
+			"options": "Employee"
+		},
+		{
+			"fieldname": "behavior",
+			"fieldtype": "Small Text",
+			"label": "Behavior"
+		},
+		{
+			"fieldname": "eating_status",
+			"fieldtype": "Select",
+			"label": "Eating",
+			"options": "\nGood\nFair\nPoor\nSkipped"
+		},
+		{
+			"fieldname": "nap_status",
+			"fieldtype": "Select",
+			"label": "Nap",
+			"options": "\nSlept\nPartial\nNo Nap"
+		},
+		{
+			"fieldname": "health_notes",
+			"fieldtype": "Small Text",
+			"label": "Health Notes"
+		},
+		{
+			"fieldname": "parent_note",
+			"fieldtype": "Small Text",
+			"label": "Note for Parents"
+		}
+	],
+	"links": [],
+	"modified": "2026-05-04 00:00:00",
+	"module": "Attendance",
+	"name": "Nursery Daily Observation",
+	"owner": "Administrator",
+	"permissions": [
+		{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+		{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Administrator", "share": 1, "write": 1},
+		{"create": 1, "delete": 0, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Teacher", "share": 0, "write": 1}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 1
+}

@@ -1,0 +1,72 @@
+{
+	"actions": [],
+	"allow_import": 1,
+	"creation": "2026-05-04 00:00:00",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"company",
+		"fee_class",
+		"tuition_fee",
+		"transport_fee",
+		"meal_fee",
+		"activity_fee",
+		"discount_policy"
+	],
+	"fields": [
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"fieldname": "fee_class",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Class / Program Label",
+			"reqd": 1
+		},
+		{
+			"fieldname": "tuition_fee",
+			"fieldtype": "Currency",
+			"label": "Tuition Fee"
+		},
+		{
+			"fieldname": "transport_fee",
+			"fieldtype": "Currency",
+			"label": "Transport Fee"
+		},
+		{
+			"fieldname": "meal_fee",
+			"fieldtype": "Currency",
+			"label": "Meal Fee"
+		},
+		{
+			"fieldname": "activity_fee",
+			"fieldtype": "Currency",
+			"label": "Activity Fee"
+		},
+		{
+			"fieldname": "discount_policy",
+			"fieldtype": "Small Text",
+			"label": "Discount Policy"
+		}
+	],
+	"links": [],
+	"modified": "2026-05-04 00:00:00",
+	"module": "Billing",
+	"name": "Nursery Fee Structure",
+	"owner": "Administrator",
+	"permissions": [
+		{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
+		{"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Administrator", "share": 1, "write": 1},
+		{"create": 0, "delete": 0, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Nursery Accountant", "share": 0, "write": 1}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"states": [],
+	"track_changes": 1
+}
