@@ -22,6 +22,7 @@ app_include_css = "/assets/omnexa_nursery/css/nursery_desk.css"
 before_install = "omnexa_nursery.install.before_install"
 after_install = "omnexa_nursery.install.after_install"
 before_migrate = "omnexa_nursery.install.before_migrate"
+after_migrate = "omnexa_nursery.install.after_migrate"
 
 scheduler_events = {
 	"monthly": [
