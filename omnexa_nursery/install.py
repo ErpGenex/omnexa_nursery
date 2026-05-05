@@ -24,12 +24,16 @@ def after_migrate():
 	"""Import script reports + base Workspace JSON. Desk KPIs/charts/layout: ``omnexa_core`` ``sync_workspace_for_app('omnexa_nursery')``."""
 	_import_nursery_reports()
 	_import_public_workspace()
+	# JSON import runs after omnexa_core's migrate-time desk sync and overwrites Workspace.content
+	# with the static header from nursery.json — re-apply control tower so shortcuts/KPIs/links render.
+	_sync_nursery_workspace_from_control_tower()
 
 
 def after_install():
 	_ensure_roles()
 	_import_nursery_reports()
 	_import_public_workspace()
+	_sync_nursery_workspace_from_control_tower()
 
 
 def _import_nursery_reports():
@@ -46,6 +50,15 @@ def _import_public_workspace():
 	ws_json = os.path.join(app_root, "nursery_setup", "workspace", "nursery", "nursery.json")
 	if os.path.isfile(ws_json):
 		import_file_by_path(ws_json, force=True, ignore_version=True, reset_permissions=False)
+
+
+def _sync_nursery_workspace_from_control_tower():
+	try:
+		from omnexa_core.omnexa_core.workspace_control_tower import sync_workspace_for_app
+
+		sync_workspace_for_app("omnexa_nursery")
+	except Exception:
+		frappe.log_error(frappe.get_traceback(), "omnexa_nursery: sync_workspace_for_app failed")
 
 
 def _ensure_roles():
