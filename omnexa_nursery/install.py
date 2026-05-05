@@ -1,6 +1,7 @@
 # Copyright (c) 2026, ErpGenEx and contributors
 # License: MIT. See license.txt
 
+import glob
 import os
 
 import frappe
@@ -34,8 +35,7 @@ def after_install():
 def _import_nursery_reports():
 	"""Ensure Script Report rows exist before Workspace links validate (migrate module order is not guaranteed)."""
 	app_root = frappe.get_app_path("omnexa_nursery")
-	for slug in ("nursery_students_by_class", "nursery_attendance_summary"):
-		path = os.path.join(app_root, "reports", "report", slug, f"{slug}.json")
+	for path in sorted(glob.glob(os.path.join(app_root, "reports", "report", "*", "*.json"))):
 		if os.path.isfile(path):
 			import_file_by_path(path, force=True, ignore_version=True, reset_permissions=False)
 
