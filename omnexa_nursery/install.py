@@ -8,14 +8,6 @@ import frappe
 from frappe.modules.import_file import import_file_by_path
 
 
-def before_install():
-	if not frappe.db.a_row_exists("Company"):
-		frappe.throw(
-			"Create at least one Company before installing omnexa_nursery.",
-			title="Prerequisite",
-		)
-
-
 def before_migrate():
 	pass
 
