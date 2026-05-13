@@ -4,7 +4,7 @@ app_publisher = "ErpGenEx"
 app_description = "Integrated nursery management: students, parents, activities, attendance, and billing"
 app_email = "dev@erpgenex.com"
 app_license = "mit"
-app_version = "0.1.0"
+app_version = "1.0.1"
 
 required_apps = ["omnexa_core", "omnexa_accounting"]
 
