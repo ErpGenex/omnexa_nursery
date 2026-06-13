@@ -1,0 +1,2 @@
+[post_model_sync]
+omnexa_nursery.patches.v1_0.sync_nurs_workspace_full

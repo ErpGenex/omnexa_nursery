@@ -1,0 +1,1 @@
+frappe.pages["nursery-parent-portal"].on_page_load = function(w){ frappe.ui.make_app_page({parent:w, title:"nursery-parent-portal", single_column:1}); };
