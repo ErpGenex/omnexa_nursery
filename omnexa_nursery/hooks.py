@@ -11,7 +11,7 @@ required_apps = ["omnexa_core", "omnexa_accounting"]
 add_to_apps_screen = [
 	{
 		"name": "omnexa_nursery",
-		"logo": "/assets/omnexa_nursery/images/nursery.svg",
+		"logo": "/assets/omnexa_nursery/logo.png",
 		"title": "Nursery",
 		"route": "/app/nursery",
 	}
