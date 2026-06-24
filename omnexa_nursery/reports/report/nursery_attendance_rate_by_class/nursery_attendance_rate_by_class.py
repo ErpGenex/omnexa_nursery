@@ -3,6 +3,8 @@
 
 import frappe
 from frappe import _
+
+from omnexa_core.omnexa_core.utils.report_charts import auto_chart_for_columns
 from frappe.utils import flt, getdate
 
 
@@ -42,8 +44,9 @@ def execute(filters=None):
 		total = r.get("total_count") or 0
 		present = r.get("present_count") or 0
 		r["attendance_rate_pct"] = flt((present / total) * 100.0, 2) if total else 0.0
-
-	return _columns(), rows
+	columns = _columns()
+	chart = auto_chart_for_columns(rows, columns)
+	return columns, rows, None, chart
 
 
 def _columns():
