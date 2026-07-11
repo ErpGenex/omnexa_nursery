@@ -1,0 +1,35 @@
+{
+ "allow_roles": [
+  {
+   "role": "Desk User"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "creation": "2026-06-18 13:44:05.241457",
+ "docstatus": 0,
+ "doctype": "Module Onboarding",
+ "documentation_url": "https://frappe.io/framework",
+ "idx": 0,
+ "is_complete": 0,
+ "modified": "2026-07-11 11:11:27.121035",
+ "modified_by": "Administrator",
+ "module": "Nursery Setup",
+ "name": "ERPGENEX \u2014 Nursery",
+ "owner": "Administrator",
+ "steps": [
+  {
+   "step": "ERPGENEX-WS-nursery-01-nursery_settings"
+  },
+  {
+   "step": "ERPGENEX-WS-nursery-02-nursery_student"
+  },
+  {
+   "step": "ERPGENEX-WS-nursery-home"
+  }
+ ],
+ "subtitle": "Guided setup for this workspace.",
+ "success_message": "You are ready to work in Nursery.",
+ "title": "Nursery"
+}

@@ -1,0 +1,21 @@
+{
+ "action": "Create Entry",
+ "action_label": "Create",
+ "creation": "2026-05-06 03:54:37.983070",
+ "description": "Create or review your first **Nursery Educational Activity** record from this workspace.",
+ "docstatus": 0,
+ "doctype": "Onboarding Step",
+ "idx": 0,
+ "is_complete": 0,
+ "is_single": 0,
+ "is_skipped": 0,
+ "modified": "2026-07-10 22:50:52.293875",
+ "modified_by": "Administrator",
+ "name": "ERPGENEX-WS-nursery-04-nursery_educational_activity",
+ "owner": "Administrator",
+ "reference_document": "Nursery Educational Activity",
+ "show_form_tour": 0,
+ "show_full_form": 0,
+ "title": "Get started with Nursery Educational Activity",
+ "validate_action": 1
+}
