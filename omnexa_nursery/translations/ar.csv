@@ -1,0 +1,146 @@
+(No age group),(No age group)
+(No class),(No class)
+(Not recorded),(Not recorded)
+Active,نشط
+Activity,نشاط
+Activity Fee,نشاط Fee
+Activity Name,نشاط اسم
+Activity Type,نشاط نوع
+Address,العنوان
+Age (Years),Age (Years)
+Age Group,Age Group
+Allergies,Allergies
+Allergies & Dietary Notes,Allergies & Dietary Notes
+Attendance,Attendance
+Attendance already exists for this student on this date ({0}).,Attendance already exists لـ this student on this تاريخ ({ 0 }).
+Auto Monthly Billing,Auto Monthly فوترة
+Behavior,Behavior
+Billing,فوترة
+Billing (Sales Invoice),فوترة (مبيعات فاتورة)
+Billing customer,فوترة عميل
+Billing Customer,فوترة عميل
+Birth Certificate,Birth Certificate
+Birth Date,Birth تاريخ
+Birth date cannot be in the future.,Birth تاريخ cannot be in the future.
+Blood Group,Blood Group
+Category,الفئة
+Class / Program Label,Class Program Label
+Class / Room,Class Room
+Company,الشركة
+Company {0} has no default currency.,شركة { 0 } has no افتراضي currency.
+Count,عدد
+Date,التاريخ
+Days since,Days since
+Default Branch,افتراضي فرع
+Default Tax Rule,افتراضي Tax Rule
+Discount Policy,Discount سياسة
+Documents,مستندات
+Driver,Driver
+Drop-off,Drop - off
+Drop-off Time,Drop - off Time
+Duplicate Attendance,Duplicate Attendance
+Duplicate Enrollment,Duplicate Enrollment
+Eating,Eating
+Educational Activities,Educational Activities
+Educational Program,Educational Program
+Educational Programs,Educational Programs
+Educational Progress,Educational Progress
+Email,البريد الإلكتروني
+Emergency Contact Name,Emergency اتصال اسم
+Emergency Contact Phone,Emergency اتصال Phone
+Emergency Name,Emergency اسم
+Emergency Phone,Emergency Phone
+Enabled Programs,Enabled Programs
+Enrollment Date,Enrollment تاريخ
+Enrollment status,Enrollment حالة
+Father,Father
+Father Name,Father اسم
+Full Name (AR),Full اسم (عربي)
+Full Name (EN),Full اسم (EN)
+Gender,Gender
+Health Notes,صحة Notes
+Internal Notes,Internal Notes
+Invoice Due (Days after posting),فاتورة استحقاق (Days after posting)
+Joining Date,Joining تاريخ
+Last observation,Last observation
+License Number,License رقم
+Lines,Lines
+Linked Students,Linked Students
+Logo,Logo
+Maximum Age,Maximum Age
+Meal Fee,Meal Fee
+Medical Data,Medical بيانات
+Minimum Age,Minimum Age
+Monthly Fee,Monthly Fee
+Mother,Mother
+Mother Name,Mother اسم
+Name (AR),اسم (عربي)
+Name (EN),اسم (EN)
+Nap,Nap
+National ID,National معرف
+No Branch found for company {0}. Create a Branch first.,No فرع found لـ شركة { 0 }. Create a فرع first.
+Note for Parents,Note لـ Parents
+Notes,Notes
+nurs-executive-dashboard,nurs - تنفيذي - لوحة معلومات
+Nursery,Nursery
+Nursery Activity Enrollment,Nursery نشاط Enrollment
+Nursery Attendance,Nursery Attendance
+Nursery Attendance Summary,Nursery Attendance ملخص
+Nursery Daily Observation,Nursery يومي Observation
+Nursery Educational Activity,Nursery Educational نشاط
+Nursery Enabled Program,Nursery Enabled Program
+Nursery Fee Structure,Nursery Fee Structure
+Nursery Name,Nursery اسم
+Nursery Parent Profile,Nursery Parent ملف
+Nursery Parent Student Link,Nursery Parent Student Link
+Nursery Profile,Nursery ملف
+Nursery Settings,Nursery إعدادات
+Nursery Setup,Nursery إعداد
+Nursery Student,Nursery Student
+Nursery Students by Class,Nursery Students حسب Class
+Nursery Transport,Nursery Transport
+Observations,Observations
+Occupation,Occupation
+Operations,عمليات
+Parent,Parent
+Parent / Guardian,Parent Guardian
+Parent Management,Parent إدارة
+Parent Phone 1,Parent Phone 1
+Parent Phone 2,Parent Phone 2
+People,People
+Personal Data,Personal بيانات
+Phone,Phone
+Phone 1,Phone 1
+Phone 2,Phone 2
+Pickup,Pickup
+Pickup Time,Pickup Time
+Present,Present
+Present %,Present%
+Primary Contact,Primary اتصال
+Primary Parent Profile,Primary Parent ملف
+Profile Image,ملف Image
+Programs & Fees,Programs & Fees
+Programs enabled for this nursery (dynamic module activation per roadmap).,Programs enabled لـ this nursery (dynamic module activation per roadmap).
+Progress Notes,Progress Notes
+Relationship,Relationship
+Remarks,Remarks
+Reports,تقارير
+Route,Route
+Route Doc,Route Doc
+Setup,الإعداد
+Setup Complete,إعداد Complete
+Status,الحالة
+Student,Student
+Student ID,Student معرف
+Student is already enrolled in this activity ({0}).,Student is already enrolled in this نشاط ({ 0 }).
+Student Management,Student إدارة
+Students,Students
+Supervisor,Supervisor
+Teacher / Staff,Teacher Staff
+Total lines,إجمالي lines
+Transport Fee,Transport Fee
+Tuition Fee,Tuition Fee
+Type,النوع
+Vehicle,مركبة
+WhatsApp,Whats App
+"When enabled, the monthly scheduler creates Sales Invoices in omnexa_accounting.","When enabled, the monthly scheduler creates مبيعات Invoices in omnexa محاسبة."
