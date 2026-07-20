@@ -1,0 +1,300 @@
+{% extends "templates/base.html" %}
+
+{% block title %}{{ _("Parent Portal") }} - Omnexa Nursery{% endblock %}
+
+{% block style %}
+<style>
+	.parent-portal {
+		padding: 24px;
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+	.portal-header {
+		background: linear-gradient(135deg, #e91e63 0%, #f48fb1 100%);
+		color: white;
+		padding: 32px;
+		border-radius: 16px;
+		margin-bottom: 32px;
+	}
+	.portal-stats {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 16px;
+		margin-bottom: 32px;
+	}
+	.stat-card {
+		background: white;
+		padding: 24px;
+		border-radius: 12px;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+		text-align: center;
+	}
+	.stat-card h3 {
+		font-size: 2rem;
+		margin: 8px 0;
+		color: #e91e63;
+	}
+	.stat-card p {
+		color: #666;
+		margin: 0;
+	}
+	.portal-section {
+		background: white;
+		padding: 24px;
+		border-radius: 12px;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+		margin-bottom: 24px;
+	}
+	.portal-section h2 {
+		margin-bottom: 20px;
+		color: #333;
+	}
+	.table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+	.table th,
+	.table td {
+		padding: 12px;
+		text-align: left;
+		border-bottom: 1px solid #eee;
+	}
+	.table th {
+		background: #f5f5f5;
+		font-weight: 600;
+	}
+	.children-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		gap: 16px;
+	}
+	.child-card {
+		border: 1px solid #eee;
+		border-radius: 8px;
+		padding: 16px;
+		text-align: center;
+	}
+	.btn {
+		padding: 8px 16px;
+		border-radius: 6px;
+		border: none;
+		cursor: pointer;
+		font-weight: 500;
+	}
+	.btn-primary {
+		background: #e91e63;
+		color: white;
+	}
+	.btn-primary:hover {
+		background: #c2185b;
+	}
+	.btn-secondary {
+		background: #f5f5f5;
+		color: #333;
+	}
+	.btn-secondary:hover {
+		background: #e0e0e0;
+	}
+	.enrollment-form {
+		background: #f9f9f9;
+		padding: 20px;
+		border-radius: 8px;
+		margin-bottom: 24px;
+	}
+	.form-group {
+		margin-bottom: 16px;
+	}
+	.form-group label {
+		display: block;
+		margin-bottom: 8px;
+		font-weight: 500;
+	}
+	.form-group input,
+	.form-group select {
+		width: 100%;
+		padding: 10px;
+		border: 1px solid #ddd;
+		border-radius: 6px;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="parent-portal">
+	<div class="portal-header">
+		<h1>{{ _("Nursery Parent Portal") }}</h1>
+		<p>{{ _("Welcome") }}{% if context.parent %}, {{ context.parent.guardian_name }}{% endif %}</p>
+	</div>
+
+	<div class="portal-stats">
+		<div class="stat-card">
+			<h3>{{ context.stats.total_children or 0 }}</h3>
+			<p>{{ _("Total Children") }}</p>
+		</div>
+		<div class="stat-card">
+			<h3>{{ context.stats.active_enrollments or 0 }}</h3>
+			<p>{{ _("Active Enrollments") }}</p>
+		</div>
+		<div class="stat-card">
+			<h3>{{ context.stats.completed_enrollments or 0 }}</h3>
+			<p>{{ _("Completed Enrollments") }}</p>
+		</div>
+		<div class="stat-card">
+			<h3>{{ context.stats.total_invoices or 0 }}</h3>
+			<p>{{ _("Total Invoices") }}</p>
+		</div>
+	</div>
+
+	<div class="portal-section">
+		<h2>{{ _("Create New Enrollment") }}</h2>
+		<div class="enrollment-form">
+			<div class="form-group">
+				<label>{{ _("Select Child") }}</label>
+				<select id="child-select">
+					<option value="">{{ _("Choose a child") }}</option>
+					{% for child in context.children %}
+					<option value="{{ child.name }}">{{ child.student_name }}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div class="form-group">
+				<label>{{ _("Academic Year") }}</label>
+				<input type="text" id="academic-year" placeholder="2024-2025">
+			</div>
+			<div class="form-group">
+				<label>{{ _("Program") }}</label>
+				<select id="program-select">
+					<option value="">{{ _("Choose a program") }}</option>
+					<option value="Nursery">Nursery</option>
+					<option value="KG1">KG1</option>
+					<option value="KG2">KG2</option>
+				</select>
+			</div>
+			<button class="btn btn-primary" onclick="submitEnrollment()">{{ _("Enroll Now") }}</button>
+		</div>
+	</div>
+
+	<div class="portal-section">
+		<h2>{{ _("Your Children") }}</h2>
+		<div class="children-grid">
+			{% for child in context.children %}
+			<div class="child-card">
+				<h3>{{ child.student_name }}</h3>
+				<p>{{ _("Date of Birth") }}: {{ child.date_of_birth }}</p>
+				<p>{{ _("Gender") }}: {{ child.gender }}</p>
+				<p>{{ _("Group") }}: {{ child.student_group }}</p>
+				<button class="btn btn-primary" onclick="viewChildDetails('{{ child.name }}')">{{ _("View Details") }}</button>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="portal-section">
+		<h2>{{ _("Recent Enrollments") }}</h2>
+		{% if context.enrollments %}
+		<table class="table">
+			<thead>
+				<tr>
+					<th>{{ _("Enrollment ID") }}</th>
+					<th>{{ _("Student") }}</th>
+					<th>{{ _("Academic Year") }}</th>
+					<th>{{ _("Program") }}</th>
+					<th>{{ _("Enrollment Date") }}</th>
+					<th>{{ _("Status") }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for enrollment in context.enrollments %}
+				<tr>
+					<td>{{ enrollment.name }}</td>
+					<td>{{ enrollment.student }}</td>
+					<td>{{ enrollment.academic_year }}</td>
+					<td>{{ enrollment.program }}</td>
+					<td>{{ enrollment.enrollment_date }}</td>
+					<td>{{ enrollment.status }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		{% else %}
+		<p>{{ _("No enrollments found") }}</p>
+		{% endif %}
+	</div>
+
+	<div class="portal-section">
+		<h2>{{ _("Recent Invoices") }}</h2>
+		{% if context.invoices %}
+		<table class="table">
+			<thead>
+				<tr>
+					<th>{{ _("Invoice ID") }}</th>
+					<th>{{ _("Date") }}</th>
+					<th>{{ _("Total") }}</th>
+					<th>{{ _("Outstanding") }}</th>
+					<th>{{ _("Status") }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for invoice in context.invoices %}
+				<tr>
+					<td>{{ invoice.name }}</td>
+					<td>{{ invoice.posting_date }}</td>
+					<td>{{ invoice.grand_total }}</td>
+					<td>{{ invoice.outstanding_amount }}</td>
+					<td>{{ invoice.status }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		{% else %}
+		<p>{{ _("No invoices found") }}</p>
+		{% endif %}
+	</div>
+</div>
+
+<script>
+	function viewChildDetails(childName) {
+		frappe.call({
+			method: "omnexa_nursery.omnexa_nursery.page.nursery_parent_portal.nursery_parent_portal.get_student_details",
+			args: {
+				student_name: childName
+			},
+			callback: function(r) {
+				if (r.message.success) {
+					alert("Student Details:\nName: " + r.message.student_name + "\nDOB: " + r.message.date_of_birth + "\nGender: " + r.message.gender + "\nGroup: " + r.message.student_group);
+				} else {
+					alert("Error: " + r.message.message);
+				}
+			}
+		});
+	}
+
+	function submitEnrollment() {
+		const childSelect = document.getElementById('child-select');
+		const academicYear = document.getElementById('academic-year').value;
+		const programSelect = document.getElementById('program-select');
+		
+		if (!childSelect.value || !academicYear || !programSelect.value) {
+			alert("Please fill in all fields");
+			return;
+		}
+
+		frappe.call({
+			method: "omnexa_nursery.omnexa_nursery.page.nursery_parent_portal.nursery_parent_portal.create_enrollment",
+			args: {
+				student: childSelect.value,
+				academic_year: academicYear,
+				program: programSelect.value
+			},
+			callback: function(r) {
+				if (r.message.success) {
+					alert("Enrollment created successfully: " + r.message.enrollment);
+					location.reload();
+				} else {
+					alert("Error: " + r.message.message);
+				}
+			}
+		});
+	}
+</script>
+{% endblock %}

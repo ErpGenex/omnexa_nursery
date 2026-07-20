@@ -41,8 +41,8 @@ def execute(filters=None):
 		{
 			**values,
 			"eat_na": str(_("(Not recorded)")),
-			"nap_na": str(_("(Not recorded)")),
-		},
+			"nap_na": str(_("(Not recorded)"))
+	},
 		as_dict=True,
 	)
 	columns = _columns()
@@ -52,8 +52,12 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Date"), "fieldname": "log_date", "fieldtype": "Date", "width": 120},
-		{"label": _("Eating"), "fieldname": "eating_status", "fieldtype": "Data", "width": 110},
-		{"label": _("Nap"), "fieldname": "nap_status", "fieldtype": "Data", "width": 110},
-		{"label": _("Observations"), "fieldname": "observation_count", "fieldtype": "Int", "width": 110},
+		{"label": _("Date"), "fieldname": "log_date", "fieldtype": "Date", "width": 120
+	},
+		{"label": _("Eating"), "fieldname": "eating_status", "fieldtype": "Data", "width": 110
+	},
+		{"label": _("Nap"), "fieldname": "nap_status", "fieldtype": "Data", "width": 110
+	},
+		{"label": _("Observations"), "fieldname": "observation_count", "fieldtype": "Int", "width": 110
+	},
 	]

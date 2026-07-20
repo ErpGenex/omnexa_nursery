@@ -11,7 +11,8 @@ from frappe.utils import flt, getdate
 def execute(filters=None):
 	filters = frappe._dict(filters or {})
 	conditions = ["na.docstatus < 2", "ns.docstatus < 2"]
-	values: dict = {"nc": str(_("(No class)"))}
+	values: dict = {"nc": str(_("(No class)"))
+	}
 
 	if filters.get("company"):
 		conditions.append("na.company = %(company)s")
@@ -51,8 +52,12 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Class / Room"), "fieldname": "class_room", "fieldtype": "Data", "width": 160},
-		{"label": _("Present"), "fieldname": "present_count", "fieldtype": "Int", "width": 90},
-		{"label": _("Total lines"), "fieldname": "total_count", "fieldtype": "Int", "width": 100},
-		{"label": _("Present %"), "fieldname": "attendance_rate_pct", "fieldtype": "Float", "width": 100},
+		{"label": _("Class / Room"), "fieldname": "class_room", "fieldtype": "Data", "width": 160
+	},
+		{"label": _("Present"), "fieldname": "present_count", "fieldtype": "Int", "width": 90
+	},
+		{"label": _("Total lines"), "fieldname": "total_count", "fieldtype": "Int", "width": 100
+	},
+		{"label": _("Present %"), "fieldname": "attendance_rate_pct", "fieldtype": "Float", "width": 100
+	},
 	]

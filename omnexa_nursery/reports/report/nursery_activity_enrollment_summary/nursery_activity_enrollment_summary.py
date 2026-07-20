@@ -41,9 +41,14 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Activity"), "fieldname": "activity_name", "fieldtype": "Data", "width": 200},
-		{"label": _("Type"), "fieldname": "activity_type", "fieldtype": "Data", "width": 160},
-		{"label": _("Category"), "fieldname": "category", "fieldtype": "Data", "width": 120},
-		{"label": _("Enrollment status"), "fieldname": "status", "fieldtype": "Data", "width": 120},
-		{"label": _("Count"), "fieldname": "enrollment_count", "fieldtype": "Int", "width": 90},
+		{"label": _("Activity"), "fieldname": "activity_name", "fieldtype": "Data", "width": 200
+	},
+		{"label": _("Type"), "fieldname": "activity_type", "fieldtype": "Data", "width": 160
+	},
+		{"label": _("Category"), "fieldname": "category", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Enrollment status"), "fieldname": "status", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Count"), "fieldname": "enrollment_count", "fieldtype": "Int", "width": 90
+	},
 	]

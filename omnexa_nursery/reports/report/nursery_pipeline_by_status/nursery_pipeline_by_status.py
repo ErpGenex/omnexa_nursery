@@ -37,6 +37,8 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 140},
-		{"label": _("Students"), "fieldname": "student_count", "fieldtype": "Int", "width": 100},
+		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 140
+	},
+		{"label": _("Students"), "fieldname": "student_count", "fieldtype": "Int", "width": 100
+	},
 	]

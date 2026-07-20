@@ -1,0 +1,66 @@
+{% extends "templates/base.html" %}
+
+{% block title %}روابط الحضانة | Nursery Links{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center mb-4">روابط الحضانة | Nursery Links</h1>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">🌐 موقع الحضانة العام | Public Website</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">الموقع العام للحضانة - متاح للجميع</p>
+                    <a href="/nursery/" target="_blank" class="btn btn-primary btn-lg">
+                        <i class="fa fa-external-link"></i> زيارة الموقع | Visit Website
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">👨‍👩‍👧‍👦 بوابة أولياء الأمور | Parent Portal</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">بوابة خاصة لأولياء الأمور لمتابعة أطفالهم</p>
+                    <a href="/app/nursery-parent-portal/" target="_blank" class="btn btn-success btn-lg">
+                        <i class="fa fa-user"></i> دخول البوابة | Access Portal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-4">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0">📋 معلومات إضافية | Additional Information</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>رابط الموقع:</strong> <code>{{ frappe.request.host_url }}nursery/</code>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>بوابة أولياء الأمور:</strong> <code>{{ frappe.request.host_url }}app/nursery-parent-portal/</code>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>الدور المطلوب:</strong> <code>Nursery Parent Portal</code>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

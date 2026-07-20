@@ -33,7 +33,8 @@ def ensure_nursery_service_items(company: str) -> dict[str, str]:
 	)
 	out: dict[str, str] = {}
 	for key, code, title in specs:
-		name = frappe.db.get_value("Item", {"item_code": code, "company": company}, "name")
+		name = frappe.db.get_value("Item", {"item_code": code, "company": company
+	}, "name")
 		if name:
 			out[key] = name
 			continue
@@ -47,8 +48,8 @@ def ensure_nursery_service_items(company: str) -> dict[str, str]:
 				"stock_uom": uom,
 				"is_stock_item": 0,
 				"is_sales_item": 1,
-				"is_purchase_item": 0,
-			}
+				"is_purchase_item": 0
+	}
 		)
 		doc.insert(ignore_permissions=True)
 		out[key] = doc.name

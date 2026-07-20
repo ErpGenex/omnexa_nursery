@@ -17,11 +17,16 @@ from omnexa_core.omnexa_core.report_print.report_query_filters import (
 
 def execute(filters=None):
 	columns = [
-		{"label": _("Student"), "fieldname": "student_id", "fieldtype": "Link", "options": "Nursery Student", "width": 130},
-		{"label": _("Name (EN)"), "fieldname": "full_name_en", "fieldtype": "Data", "width": 180},
-		{"label": _("Class / Room"), "fieldname": "class_room", "fieldtype": "Data", "width": 120},
-		{"label": _("Last observation"), "fieldname": "last_observation_date", "fieldtype": "Date", "width": 130},
-		{"label": _("Days since"), "fieldname": "days_since_observation", "fieldtype": "Int", "width": 100},
+		{"label": _("Student"), "fieldname": "student_id", "fieldtype": "Link", "options": "Nursery Student", "width": 130
+	},
+		{"label": _("Name (EN)"), "fieldname": "full_name_en", "fieldtype": "Data", "width": 180
+	},
+		{"label": _("Class / Room"), "fieldname": "class_room", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Last observation"), "fieldname": "last_observation_date", "fieldtype": "Date", "width": 130
+	},
+		{"label": _("Days since"), "fieldname": "days_since_observation", "fieldtype": "Int", "width": 100
+	},
 	]
 	filters = prepare_filters(filters)
 	conditions, params = sql_conditions(filters, "Nursery Student", date_field="creation", company=True, branch=True)

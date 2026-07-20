@@ -43,13 +43,22 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Parent"), "fieldname": "parent_id", "fieldtype": "Link", "options": "Nursery Parent Profile", "width": 140},
-		{"label": _("Father"), "fieldname": "father_name", "fieldtype": "Data", "width": 160},
-		{"label": _("Mother"), "fieldname": "mother_name", "fieldtype": "Data", "width": 160},
-		{"label": _("Phone 1"), "fieldname": "phone_1", "fieldtype": "Data", "width": 120},
-		{"label": _("Phone 2"), "fieldname": "phone_2", "fieldtype": "Data", "width": 120},
-		{"label": _("WhatsApp"), "fieldname": "whatsapp", "fieldtype": "Data", "width": 120},
-		{"label": _("Email"), "fieldname": "email", "fieldtype": "Data", "width": 180},
-		{"label": _("Address"), "fieldname": "address", "fieldtype": "Small Text", "width": 220},
-		{"label": _("Billing customer"), "fieldname": "billing_customer", "fieldtype": "Link", "options": "Customer", "width": 160},
+		{"label": _("Parent"), "fieldname": "parent_id", "fieldtype": "Link", "options": "Nursery Parent Profile", "width": 140
+	},
+		{"label": _("Father"), "fieldname": "father_name", "fieldtype": "Data", "width": 160
+	},
+		{"label": _("Mother"), "fieldname": "mother_name", "fieldtype": "Data", "width": 160
+	},
+		{"label": _("Phone 1"), "fieldname": "phone_1", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Phone 2"), "fieldname": "phone_2", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("WhatsApp"), "fieldname": "whatsapp", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Email"), "fieldname": "email", "fieldtype": "Data", "width": 180
+	},
+		{"label": _("Address"), "fieldname": "address", "fieldtype": "Small Text", "width": 220
+	},
+		{"label": _("Billing customer"), "fieldname": "billing_customer", "fieldtype": "Link", "options": "Customer", "width": 160
+	},
 	]

@@ -13,7 +13,7 @@ add_to_apps_screen = [
 		"name": "omnexa_nursery",
 		"logo": "/assets/omnexa_nursery/logo.png",
 		"title": "Nursery",
-		"route": "/app/nursery",
+		"route": "/app/nursery"
 	}
 ]
 
@@ -32,5 +32,4 @@ scheduler_events = {
 	],
 	"daily": [
 		"omnexa_nursery.tasks.late_payment_alerts.run_late_payment_alerts",
-	],
-}
+	]}

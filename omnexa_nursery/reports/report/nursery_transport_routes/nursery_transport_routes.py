@@ -42,12 +42,20 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Route Doc"), "fieldname": "route_id", "fieldtype": "Link", "options": "Nursery Transport", "width": 140},
-		{"label": _("Route"), "fieldname": "route_name", "fieldtype": "Data", "width": 160},
-		{"label": _("Vehicle"), "fieldname": "vehicle", "fieldtype": "Data", "width": 120},
-		{"label": _("Driver"), "fieldname": "driver", "fieldtype": "Link", "options": "Employee", "width": 140},
-		{"label": _("Supervisor"), "fieldname": "supervisor", "fieldtype": "Link", "options": "Employee", "width": 140},
-		{"label": _("Pickup"), "fieldname": "pickup_time", "fieldtype": "Time", "width": 90},
-		{"label": _("Drop-off"), "fieldname": "drop_time", "fieldtype": "Time", "width": 90},
-		{"label": _("Notes"), "fieldname": "notes", "fieldtype": "Small Text", "width": 200},
+		{"label": _("Route Doc"), "fieldname": "route_id", "fieldtype": "Link", "options": "Nursery Transport", "width": 140
+	},
+		{"label": _("Route"), "fieldname": "route_name", "fieldtype": "Data", "width": 160
+	},
+		{"label": _("Vehicle"), "fieldname": "vehicle", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Driver"), "fieldname": "driver", "fieldtype": "Link", "options": "Employee", "width": 140
+	},
+		{"label": _("Supervisor"), "fieldname": "supervisor", "fieldtype": "Link", "options": "Employee", "width": 140
+	},
+		{"label": _("Pickup"), "fieldname": "pickup_time", "fieldtype": "Time", "width": 90
+	},
+		{"label": _("Drop-off"), "fieldname": "drop_time", "fieldtype": "Time", "width": 90
+	},
+		{"label": _("Notes"), "fieldname": "notes", "fieldtype": "Small Text", "width": 200
+	},
 	]

@@ -48,7 +48,8 @@ def _match_fee_structure(company: str, class_room: str | None):
 	target = (class_room or "").strip().lower()
 	rows = frappe.get_all(
 		"Nursery Fee Structure",
-		filters={"company": company},
+		filters={"company": company
+	},
 		fields=["name", "fee_class"],
 	)
 	for row in rows:
@@ -84,17 +85,20 @@ def generate_monthly_invoices(
 	If billing_year/month omitted, bills the **previous calendar month** relative to posting_date (or today).
 	"""
 	if not frappe.db.get_single_value("Nursery Settings", "setup_complete"):
-		return {"ok": False, "skipped": True, "reason": "Nursery Settings not completed"}
+		return {"ok": False, "skipped": True, "reason": "Nursery Settings not completed"
+	}
 
 	auto_bill = frappe.db.get_single_value("Nursery Settings", "auto_bill_enabled")
 	if auto_bill is None:
 		auto_bill = 1
 	if not cint(auto_bill):
-		return {"ok": False, "skipped": True, "reason": "auto_bill_enabled is off"}
+		return {"ok": False, "skipped": True, "reason": "auto_bill_enabled is off"
+	}
 
 	company = frappe.db.get_single_value("Nursery Settings", "company")
 	if not company:
-		return {"ok": False, "skipped": True, "reason": "No company on Nursery Settings"}
+		return {"ok": False, "skipped": True, "reason": "No company on Nursery Settings"
+	}
 
 	pdate = getdate(posting_date or today())
 	if billing_year is None or billing_month is None:
@@ -112,7 +116,8 @@ def generate_monthly_invoices(
 	pref_branch = frappe.db.get_single_value("Nursery Settings", "default_branch")
 	branch = _default_branch(company, pref_branch)
 	if not branch:
-		return {"ok": False, "error": _("No Branch found for company {0}. Create a Branch first.").format(company)}
+		return {"ok": False, "error": _("No Branch found for company {0}. Create a Branch first.").format(company)
+	}
 
 	tax_rule = frappe.db.get_single_value("Nursery Settings", "default_tax_rule")
 
@@ -122,7 +127,8 @@ def generate_monthly_invoices(
 
 	parents = frappe.get_all(
 		"Nursery Parent Profile",
-		filters={"company": company},
+		filters={"company": company
+	},
 		pluck="name",
 	)
 
@@ -130,21 +136,25 @@ def generate_monthly_invoices(
 		try:
 			customer = frappe.db.get_value("Nursery Parent Profile", parent, "customer")
 			if not customer:
-				skipped.append({"parent": parent, "reason": "no_customer"})
+				skipped.append({"parent": parent, "reason": "no_customer"
+	})
 				continue
 
 			ref = _billing_reference(company, period, parent)
 			if _invoice_exists(company, ref):
-				skipped.append({"parent": parent, "reason": "already_billed", "reference": ref})
+				skipped.append({"parent": parent, "reason": "already_billed", "reference": ref
+	})
 				continue
 
 			students = frappe.get_all(
 				"Nursery Student",
-				filters={"company": company, "primary_parent": parent, "status": "Active"},
+				filters={"company": company, "primary_parent": parent, "status": "Active"
+	},
 				fields=["name", "class_room", "full_name_ar"],
 			)
 			if not students:
-				skipped.append({"parent": parent, "reason": "no_active_students"})
+				skipped.append({"parent": parent, "reason": "no_active_students"
+	})
 				continue
 
 			si = frappe.new_doc("Sales Invoice")
@@ -172,8 +182,8 @@ def generate_monthly_invoices(
 								"qty": 1,
 								"rate": flt(fs.tuition_fee),
 								"income_account": income_account,
-								"external_reference": f"{st_label} — Tuition ({period})",
-							},
+								"external_reference": f"{st_label} — Tuition ({period})"
+	},
 						)
 					if flt(fs.transport_fee):
 						si.append(
@@ -183,8 +193,8 @@ def generate_monthly_invoices(
 								"qty": 1,
 								"rate": flt(fs.transport_fee),
 								"income_account": income_account,
-								"external_reference": f"{st_label} — Transport ({period})",
-							},
+								"external_reference": f"{st_label} — Transport ({period})"
+	},
 						)
 					if flt(fs.meal_fee):
 						si.append(
@@ -194,8 +204,8 @@ def generate_monthly_invoices(
 								"qty": 1,
 								"rate": flt(fs.meal_fee),
 								"income_account": income_account,
-								"external_reference": f"{st_label} — Meals ({period})",
-							},
+								"external_reference": f"{st_label} — Meals ({period})"
+	},
 						)
 
 				enrolls = frappe.get_all(
@@ -203,8 +213,8 @@ def generate_monthly_invoices(
 					filters={
 						"company": company,
 						"student": st.name,
-						"status": "Active",
-					},
+						"status": "Active"
+	},
 					fields=["name", "monthly_fee", "activity"],
 				)
 				if enrolls:
@@ -224,8 +234,8 @@ def generate_monthly_invoices(
 									"qty": 1,
 									"rate": rate,
 									"income_account": income_account,
-									"external_reference": f"{st_label} — {act_label} ({period})",
-								},
+									"external_reference": f"{st_label} — {act_label} ({period})"
+	},
 							)
 				elif fs and flt(fs.activity_fee):
 					si.append(
@@ -235,12 +245,13 @@ def generate_monthly_invoices(
 							"qty": 1,
 							"rate": flt(fs.activity_fee),
 							"income_account": income_account,
-							"external_reference": f"{st_label} — Activities bundle ({period})",
-						},
+							"external_reference": f"{st_label} — Activities bundle ({period})"
+	},
 					)
 
 			if not si.items:
-				skipped.append({"parent": parent, "reason": "no_fee_lines"})
+				skipped.append({"parent": parent, "reason": "no_fee_lines"
+	})
 				continue
 
 			due_days = cint(frappe.db.get_single_value("Nursery Settings", "invoice_due_days") or 0)
@@ -251,7 +262,8 @@ def generate_monthly_invoices(
 			si.submit()
 			created.append(si.name)
 		except Exception:
-			errors.append({"parent": parent, "error": frappe.get_traceback(with_context=True)})
+			errors.append({"parent": parent, "error": frappe.get_traceback(with_context=True)
+	})
 			frappe.log_error(frappe.get_traceback(), f"Nursery billing failed for {parent}")
 
 	return {
@@ -260,5 +272,5 @@ def generate_monthly_invoices(
 		"posting_date": str(posting),
 		"created": created,
 		"skipped": skipped,
-		"errors": errors,
+		"errors": errors
 	}

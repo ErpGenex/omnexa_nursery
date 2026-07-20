@@ -37,18 +37,28 @@ def get_site_config() -> dict:
 		"accent_color": "#00bcd4",
 		"gold_color": "#ffc107",
 		"programs": [
-			{"key": "infant", "name_ar": "حضانة الأطفال", "name_en": "Infant Care", "icon": "👶", "age": "0-2 years"},
-			{"key": "toddler", "name_ar": "الروضة", "name_en": "Toddler Program", "icon": "🧸", "age": "2-4 years"},
-			{"key": "preschool", "name_ar": "ما قبل المدرسة", "name_en": "Preschool", "icon": "🎨", "age": "4-6 years"},
-			{"key": "after_school", "name_ar": "برنامج بعد المدرسة", "name_en": "After School", "icon": "📚", "age": "6-12 years"},
+			{"key": "infant", "name_ar": "حضانة الأطفال", "name_en": "Infant Care", "icon": "👶", "age": "0-2 years"
+	},
+			{"key": "toddler", "name_ar": "الروضة", "name_en": "Toddler Program", "icon": "🧸", "age": "2-4 years"
+	},
+			{"key": "preschool", "name_ar": "ما قبل المدرسة", "name_en": "Preschool", "icon": "🎨", "age": "4-6 years"
+	},
+			{"key": "after_school", "name_ar": "برنامج بعد المدرسة", "name_en": "After School", "icon": "📚", "age": "6-12 years"
+	},
 		],
 		"features": [
-			{"icon": "👩‍🏫", "ar": "معلمون مؤهلون", "en": "Qualified Teachers"},
-			{"icon": "🍎", "ar": "وجبات صحية", "en": "Healthy Meals"},
-			{"icon": "🔒", "ar": "أمان وحماية", "en": "Safe Environment"},
-			{"icon": "🎮", "ar": "أنشطة تعليمية", "en": "Learning Activities"},
-			{"icon": "📱", "ar": "تطبيق أولياء الأمور", "en": "Parent App"},
-			{"icon": "🏥", "ar": "رعاية صحية", "en": "Healthcare Support"},
+			{"icon": "👩‍🏫", "ar": "معلمون مؤهلون", "en": "Qualified Teachers"
+	},
+			{"icon": "🍎", "ar": "وجبات صحية", "en": "Healthy Meals"
+	},
+			{"icon": "🔒", "ar": "أمان وحماية", "en": "Safe Environment"
+	},
+			{"icon": "🎮", "ar": "أنشطة تعليمية", "en": "Learning Activities"
+	},
+			{"icon": "📱", "ar": "تطبيق أولياء الأمور", "en": "Parent App"
+	},
+			{"icon": "🏥", "ar": "رعاية صحية", "en": "Healthcare Support"
+	},
 		],
-		"stats": {"children": 500, "teachers": 50, "families": 300, "years": 10},
+		"stats": {"children": 500, "teachers": 50, "families": 300, "years": 10}
 	}

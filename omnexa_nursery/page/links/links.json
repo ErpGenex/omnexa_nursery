@@ -1,0 +1,14 @@
+{
+ "item_code": "Nursery Links",
+ "item_name": "Nursery Links",
+ "module": "Omnexa Nursery",
+ "page_name": "links",
+ "route": "links",
+ "is_standard": 1,
+ "published": 1,
+ "roles": [
+  "System Manager",
+  "Nursery Administrator",
+  "Nursery Staff"
+ ]
+}

@@ -54,17 +54,30 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Student"), "fieldname": "student_id", "fieldtype": "Link", "options": "Nursery Student", "width": 130},
-		{"label": _("Name (EN)"), "fieldname": "full_name_en", "fieldtype": "Data", "width": 160},
-		{"label": _("Name (AR)"), "fieldname": "full_name_ar", "fieldtype": "Data", "width": 140},
-		{"label": _("Class / Room"), "fieldname": "class_room", "fieldtype": "Data", "width": 120},
-		{"label": _("Age Group"), "fieldname": "age_group", "fieldtype": "Data", "width": 90},
-		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 100},
-		{"label": _("Allergies"), "fieldname": "allergies", "fieldtype": "Small Text", "width": 200},
-		{"label": _("Blood Group"), "fieldname": "blood_group", "fieldtype": "Data", "width": 90},
-		{"label": _("Emergency Name"), "fieldname": "emergency_contact_name", "fieldtype": "Data", "width": 140},
-		{"label": _("Emergency Phone"), "fieldname": "emergency_contact_phone", "fieldtype": "Data", "width": 120},
-		{"label": _("Parent Phone 1"), "fieldname": "parent_phone_1", "fieldtype": "Data", "width": 120},
-		{"label": _("Parent Phone 2"), "fieldname": "parent_phone_2", "fieldtype": "Data", "width": 120},
-		{"label": _("WhatsApp"), "fieldname": "parent_whatsapp", "fieldtype": "Data", "width": 110},
+		{"label": _("Student"), "fieldname": "student_id", "fieldtype": "Link", "options": "Nursery Student", "width": 130
+	},
+		{"label": _("Name (EN)"), "fieldname": "full_name_en", "fieldtype": "Data", "width": 160
+	},
+		{"label": _("Name (AR)"), "fieldname": "full_name_ar", "fieldtype": "Data", "width": 140
+	},
+		{"label": _("Class / Room"), "fieldname": "class_room", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Age Group"), "fieldname": "age_group", "fieldtype": "Data", "width": 90
+	},
+		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 100
+	},
+		{"label": _("Allergies"), "fieldname": "allergies", "fieldtype": "Small Text", "width": 200
+	},
+		{"label": _("Blood Group"), "fieldname": "blood_group", "fieldtype": "Data", "width": 90
+	},
+		{"label": _("Emergency Name"), "fieldname": "emergency_contact_name", "fieldtype": "Data", "width": 140
+	},
+		{"label": _("Emergency Phone"), "fieldname": "emergency_contact_phone", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Parent Phone 1"), "fieldname": "parent_phone_1", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Parent Phone 2"), "fieldname": "parent_phone_2", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("WhatsApp"), "fieldname": "parent_whatsapp", "fieldtype": "Data", "width": 110
+	},
 	]

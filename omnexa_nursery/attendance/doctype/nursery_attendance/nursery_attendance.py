@@ -13,8 +13,8 @@ class NurseryAttendance(Document):
 		filters = {
 			"student": self.student,
 			"attendance_date": self.attendance_date,
-			"company": self.company,
-		}
+			"company": self.company
+	}
 		if self.name:
 			filters["name"] = ["!=", self.name]
 		existing = frappe.db.get_value("Nursery Attendance", filters, "name")

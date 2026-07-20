@@ -10,7 +10,8 @@ class NurseryActivityEnrollment(Document):
 	def validate(self):
 		if not self.student or not self.activity:
 			return
-		filters = {"student": self.student, "activity": self.activity, "status": "Active"}
+		filters = {"student": self.student, "activity": self.activity, "status": "Active"
+	}
 		if self.name:
 			filters["name"] = ["!=", self.name]
 		existing = frappe.db.get_value("Nursery Activity Enrollment", filters, "name")

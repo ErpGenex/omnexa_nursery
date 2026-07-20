@@ -10,7 +10,8 @@ from omnexa_core.omnexa_core.utils.report_charts import auto_chart_for_columns
 def execute(filters=None):
 	filters = frappe._dict(filters or {})
 	conditions = ["ns.docstatus < 2"]
-	values: dict = {"na": str(_("(No class)"))}
+	values: dict = {"na": str(_("(No class)"))
+	}
 
 	if filters.get("company"):
 		conditions.append("ns.company = %(company)s")
@@ -41,7 +42,10 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Class / Room"), "fieldname": "class_room", "fieldtype": "Data", "width": 160},
-		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 120},
-		{"label": _("Students"), "fieldname": "student_count", "fieldtype": "Int", "width": 100},
+		{"label": _("Class / Room"), "fieldname": "class_room", "fieldtype": "Data", "width": 160
+	},
+		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Students"), "fieldname": "student_count", "fieldtype": "Int", "width": 100
+	},
 	]

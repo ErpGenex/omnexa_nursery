@@ -22,13 +22,12 @@ PORTAL_WORKSPACE_SPECS: dict[str, dict] = {
 		"name": "nursery-ws-parent",
 		"title": "Nursery Parent Hub",
 		"label": "Parent Portal",
-		"icon": "nursery-parent",
-	},
+		"icon": "icon"
+	}
 }
 
 PARENT_ALLOWED_PAGES = frozenset(
-	{
-		"nursery-parent-portal",
+	{"nursery-parent-portal",
 	}
 )
 
@@ -79,7 +78,7 @@ def extend_bootinfo(bootinfo):
 		"portal_role": role,
 		"home_route": PORTAL_HOME_ROUTES[role],
 		"allowed_pages": sorted(portal_allowed_pages(role)),
-		"allowed_doctypes": sorted(portal_allowed_doctypes(role)),
+		"allowed_doctypes": sorted(portal_allowed_doctypes(role))
 	}
 
 
@@ -87,7 +86,8 @@ def ensure_nursery_workspace_portal_roles() -> dict:
 	"""Hide full Nursery workspace from portal users; add minimal parent workspace."""
 	from omnexa_nursery.api.nursery_role_demo import NURSERY_STAFF_ROLES
 
-	stats = {"nursery_roles_set": 0, "parent_ws": False}
+	stats = {"nursery_roles_set": 0, "parent_ws": False
+	}
 	staff_roles = [r for r in NURSERY_STAFF_ROLES if frappe.db.exists("Role", r)]
 
 	if frappe.db.exists("Workspace", "Nursery"):
@@ -134,8 +134,8 @@ def _ensure_portal_workspace(role: str, links: list[tuple]) -> bool:
 				"module": "Nursery Setup",
 				"icon": spec["icon"],
 				"public": 0,
-				"is_hidden": 0,
-			}
+			"is_hidden": 0
+	}
 		)
 	ws.set("roles", [])
 	ws.append("roles", {"role": role})
@@ -150,25 +150,25 @@ def _ensure_portal_workspace(role: str, links: list[tuple]) -> bool:
 				"label": link_label,
 				"hidden": 0,
 				"onboard": 0,
-				"is_query_report": 0,
-			},
+			"is_query_report": 0
+	},
 		)
 	shortcuts = []
-	content = [{"id": "hdr", "type": "header", "data": {"text": f"<b>{spec['label']}</b>", "col": 12}}]
+	content = [{"id": "hdr", "type": "header", "data": {"text": f"<b>{spec['label']}</b>", "col": 12}
+	}]
 	for idx, (_lt, link_to, link_label) in enumerate(links):
 		shortcuts.append(
 			{
 				"type": "DocType" if _lt == "DocType" else "Page",
 				"link_to": link_to,
 				"label": link_label,
-				"color": "Blue",
-			}
+				"color": "Blue"
+	}
 		)
 		content.append(
-			{
-				"id": f"sc{idx}",
+			{"id": f"sc{idx}",
 				"type": "shortcut",
-				"data": {"shortcut_name": link_label, "col": 4},
+				"data": {"shortcut_name": link_label, "col": 4}
 			}
 		)
 	ws.shortcuts = []

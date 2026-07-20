@@ -45,7 +45,10 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Date"), "fieldname": "attendance_date", "fieldtype": "Date", "width": 120},
-		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 110},
-		{"label": _("Lines"), "fieldname": "line_count", "fieldtype": "Int", "width": 90},
+		{"label": _("Date"), "fieldname": "attendance_date", "fieldtype": "Date", "width": 120
+	},
+		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 110
+	},
+		{"label": _("Lines"), "fieldname": "line_count", "fieldtype": "Int", "width": 90
+	},
 	]
