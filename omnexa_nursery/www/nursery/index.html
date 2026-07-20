@@ -1,0 +1,38 @@
+---
+no_breadcrumbs: 1
+full_width: 1
+no_header: 1
+---
+
+{% extends "templates/web.html" %}
+
+{% block head_include %}
+{{ super() }}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{% endblock %}
+
+{% block title %}Omnexa Nursery | الحضانة{% endblock %}
+
+{% block page_content %}
+<div class="nursery-site nursery-premium" data-page="home">
+  <header class="nursery-header" id="nursery-header"></header>
+  <section class="nursery-hero nursery-hero-premium" id="nursery-hero"></section>
+  <div class="nursery-value-bar" id="nursery-trust-strip"></div>
+  <section class="nursery-section nursery-reveal" id="nursery-programs-section"></section>
+  <section class="nursery-section nursery-section-alt nursery-reveal" id="nursery-features-section"></section>
+  <section class="nursery-stats nursery-reveal" id="nursery-stats"></section>
+  <section class="nursery-cta-band nursery-reveal" id="nursery-cta-band"></section>
+  <footer class="nursery-footer" id="nursery-footer"></footer>
+</div>
+<script>
+  (function () {
+    function boot() {
+      if (window.NurserySite) window.NurserySite.init("home");
+    }
+    if (typeof frappe !== "undefined" && frappe.ready) frappe.ready(boot);
+    else if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+    else boot();
+  })();
+</script>
+{% endblock %}

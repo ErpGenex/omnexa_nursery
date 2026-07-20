@@ -4,13 +4,19 @@
 	"name": "nursery-parent-portal",
 	"page_name": "nursery-parent-portal",
 	"standard": "Yes",
-	"title": "Digital Channel",
+	"title": "Nursery Parent Portal",
 	"roles": [
 		{
 			"role": "System Manager"
 		},
 		{
-			"role": "All"
+			"role": "Nursery Manager"
+		},
+		{
+			"role": "Nursery User"
+		},
+		{
+			"role": "Nursery Parent Portal"
 		}
 	]
 }
