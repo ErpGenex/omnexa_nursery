@@ -5,18 +5,22 @@
     "shortcuts": [],
     "links": [
         {
-            "label": "Omnexa Nursery List",
-            "name": "omnexa_nursery",
-            "type": "List",
-            "link_to": "omnexa_nursery",
+            "label": "Student",
+            "link_to": "Nursery Student",
+            "type": "DocType",
             "onboard": 1
         },
         {
-            "label": "Omnexa Nursery Dashboard",
-            "name": "omnexa_nursery_dashboard",
-            "type": "Dashboard",
-            "link_to": "omnexa_nursery_dashboard",
-            "onboard": 1
+            "label": "Parent Profile",
+            "link_to": "Nursery Parent Profile",
+            "type": "DocType",
+            "onboard": 0
+        },
+        {
+            "label": "Student Accounts",
+            "link_to": "Customer",
+            "type": "DocType",
+            "onboard": 0
         }
     ],
     "onboarding": [],

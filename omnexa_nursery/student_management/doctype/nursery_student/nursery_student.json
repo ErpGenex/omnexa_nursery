@@ -20,6 +20,9 @@
 		"profile_image",
 		"joining_date",
 		"status",
+		"section_billing",
+		"customer",
+		"column_br_2",
 		"section_medical",
 		"allergies",
 		"blood_group",
@@ -115,6 +118,23 @@
 			"in_list_view": 1,
 			"label": "Status",
 			"options": "Draft\nActive\nWaiting\nSuspended\nGraduated"
+		},
+		{
+			"fieldname": "section_billing",
+			"fieldtype": "Section Break",
+			"label": "Billing (Accounting)"
+		},
+		{
+			"fieldname": "customer",
+			"fieldtype": "Link",
+			"label": "Customer (Accounting)",
+			"options": "Customer",
+			"read_only": 1,
+			"description": "Created automatically for billing and accounting integration."
+		},
+		{
+			"fieldname": "column_br_2",
+			"fieldtype": "Column Break"
 		},
 		{
 			"fieldname": "section_medical",
