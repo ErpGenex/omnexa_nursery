@@ -1,6 +1,6 @@
 {
 	"charts": [],
-	"content": "[{\"id\": \"nur-h1\", \"type\": \"header\", \"data\": {\"text\": \"<div class=\\\"text-muted\\\">Nursery management: children, parents, activities, attendance, and billing. Configure <b>Nursery Settings</b> first.</div>\", \"col\": 12}}]",
+	"content": "[{\"id\": \"nur-h1\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Nursery Management</b></span>\", \"col\": 12}}, {\"id\": \"nur-sp-1\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"nur-sec-0\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h5\\\"><b>⚙️ Setup</b></span>\", \"col\": 12}}, {\"id\": \"nur-lnk-0\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nursery Settings\", \"col\": 4}}, {\"id\": \"nur-lnk-1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"N enabled Program\", \"col\": 4}}, {\"id\": \"nur-sp-2\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"nur-sec-1\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h5\\\"><b>👥 People</b></span>\", \"col\": 12}}, {\"id\": \"nur-lnk-2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nursery Student\", \"col\": 4}}, {\"id\": \"nur-lnk-3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nursery Parent Profile\", \"col\": 4}}, {\"id\": \"nur-lnk-4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Parent Student Link\", \"col\": 4}}, {\"id\": \"nur-sp-3\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"nur-sec-2\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h5\\\"><b>📚 Programs & Activities</b></span>\", \"col\": 12}}, {\"id\": \"nur-lnk-5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nursery Educational Activity\", \"col\": 4}}, {\"id\": \"nur-lnk-6\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nursery Activity Enrollment\", \"col\": 4}}, {\"id\": \"nur-lnk-7\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nursery Fee Structure\", \"col\": 4}}, {\"id\": \"nur-sp-4\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"nur-sec-3\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h5\\\"><b>📋 Operations</b></span>\", \"col\": 12}}, {\"id\": \"nur-lnk-8\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nursery Attendance\", \"col\": 4}}, {\"id\": \"nur-lnk-9\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nursery Daily Observation\", \"col\": 4}}, {\"id\": \"nur-lnk-10\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nursery Transport\", \"col\": 4}}, {\"id\": \"nur-sp-5\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"nur-sec-4\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h5\\\"><b>📊 Reports</b></span>\", \"col\": 12}}, {\"id\": \"nur-lnk-11\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nursery Students by Class\", \"col\": 4}}, {\"id\": \"nur-lnk-12\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nursery Attendance Summary\", \"col\": 4}}, {\"id\": \"nur-lnk-13\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Nursery Attendance Rate by Class\", \"col\": 4}}]",
 	"docstatus": 0,
 	"doctype": "Workspace",
 	"for_user": "",
@@ -12,8 +12,9 @@
 		{
 			"hidden": 0,
 			"is_query_report": 0,
-			"label": "Setup",
-			"link_count": 0,
+			"label": "⚙️ Setup",
+			"link_count": 2,
+			"link_type": "DocType",
 			"onboard": 0,
 			"type": "Card Break"
 		},
@@ -30,8 +31,19 @@
 		{
 			"hidden": 0,
 			"is_query_report": 0,
-			"label": "People",
+			"label": "Nursery Enabled Program",
 			"link_count": 0,
+			"link_to": "Nursery Enabled Program",
+			"link_type": "DocType",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "👥 People",
+			"link_count": 3,
+			"link_type": "DocType",
 			"onboard": 0,
 			"type": "Card Break"
 		},
@@ -58,8 +70,19 @@
 		{
 			"hidden": 0,
 			"is_query_report": 0,
-			"label": "Programs & Fees",
+			"label": "Nursery Parent Student Link",
 			"link_count": 0,
+			"link_to": "Nursery Parent Student Link",
+			"link_type": "DocType",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "📚 Programs & Activities",
+			"link_count": 3,
+			"link_type": "DocType",
 			"onboard": 0,
 			"type": "Card Break"
 		},
@@ -96,8 +119,9 @@
 		{
 			"hidden": 0,
 			"is_query_report": 0,
-			"label": "Operations",
-			"link_count": 0,
+			"label": "📋 Operations",
+			"link_count": 3,
+			"link_type": "DocType",
 			"onboard": 0,
 			"type": "Card Break"
 		},
@@ -134,8 +158,9 @@
 		{
 			"hidden": 0,
 			"is_query_report": 0,
-			"label": "Reports",
-			"link_count": 0,
+			"label": "📊 Reports",
+			"link_count": 3,
+			"link_type": "DocType",
 			"onboard": 0,
 			"type": "Card Break"
 		},
@@ -155,6 +180,16 @@
 			"label": "Nursery Attendance Summary",
 			"link_count": 0,
 			"link_to": "Nursery Attendance Summary",
+			"link_type": "Report",
+			"onboard": 0,
+			"type": "Link"
+		},
+		{
+			"hidden": 0,
+			"is_query_report": 0,
+			"label": "Nursery Attendance Rate by Class",
+			"link_count": 0,
+			"link_to": "Nursery Attendance Rate by Class",
 			"link_type": "Report",
 			"onboard": 0,
 			"type": "Link"
@@ -187,13 +222,65 @@
 			"url": ""
 		},
 		{
-			"color": "Green",
+			"color": "Cyan",
 			"doc_view": "List",
 			"format": "",
 			"icon": "list",
 			"kanban_board": "",
-			"label": "Students",
+			"label": "Nursery Enabled Program",
+			"link_to": "Nursery Enabled Program",
+			"restrict_to_domain": "",
+			"stats_filter": "",
+			"type": "DocType",
+			"url": ""
+		},
+		{
+			"color": "Green",
+			"doc_view": "List",
+			"format": "",
+			"icon": "user",
+			"kanban_board": "",
+			"label": "Nursery Student",
 			"link_to": "Nursery Student",
+			"restrict_to_domain": "",
+			"stats_filter": "",
+			"type": "DocType",
+			"url": ""
+		},
+		{
+			"color": "Orange",
+			"doc_view": "List",
+			"format": "",
+			"icon": "users",
+			"kanban_board": "",
+			"label": "Nursery Parent Profile",
+			"link_to": "Nursery Parent Profile",
+			"restrict_to_domain": "",
+			"stats_filter": "",
+			"type": "DocType",
+			"url": ""
+		},
+		{
+			"color": "Purple",
+			"doc_view": "List",
+			"format": "",
+			"icon": "book",
+			"kanban_board": "",
+			"label": "Nursery Educational Activity",
+			"link_to": "Nursery Educational Activity",
+			"restrict_to_domain": "",
+			"stats_filter": "",
+			"type": "DocType",
+			"url": ""
+		},
+		{
+			"color": "Red",
+			"doc_view": "List",
+			"format": "",
+			"icon": "calendar",
+			"kanban_board": "",
+			"label": "Nursery Attendance",
+			"link_to": "Nursery Attendance",
 			"restrict_to_domain": "",
 			"stats_filter": "",
 			"type": "DocType",

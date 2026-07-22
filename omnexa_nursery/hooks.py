@@ -22,6 +22,11 @@ app_include_css = "/assets/omnexa_nursery/css/nursery_desk.css"
 web_include_css = "/assets/omnexa_nursery/css/nursery_website.css"
 web_include_js = "/assets/omnexa_nursery/js/nursery_website.js"
 
+# Public website routes
+website_route_rules = [
+	{"from_route": "/nursery", "to_route": "nursery/index"}
+]
+
 after_install = "omnexa_nursery.install.after_install"
 before_migrate = "omnexa_nursery.install.before_migrate"
 after_migrate = "omnexa_nursery.install.after_migrate"
