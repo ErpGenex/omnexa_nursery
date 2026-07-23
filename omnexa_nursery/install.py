@@ -1,7 +1,6 @@
 # Copyright (c) 2026, ErpGenEx and contributors
 # License: MIT. See license.txt
 
-import glob
 import os
 
 import frappe
@@ -14,8 +13,7 @@ def before_migrate():
 
 def after_migrate():
 	"""Import script reports + base Workspace JSON. Desk KPIs/charts/layout: ``omnexa_core`` ``sync_workspace_for_app('omnexa_nursery')``."""
-	_import_nursery_reports()
-	_import_public_workspace()
+	_import_workspace_artifacts()
 	# JSON import runs after omnexa_core's migrate-time desk sync and overwrites Workspace.content
 	# with the static header from nursery.json — re-apply control tower so shortcuts/KPIs/links render.
 	_sync_nursery_workspace_from_control_tower()
@@ -23,25 +21,26 @@ def after_migrate():
 
 def after_install():
 	_ensure_roles()
-	_import_nursery_reports()
-	_import_public_workspace()
+	_import_workspace_artifacts()
 	_sync_nursery_workspace_from_control_tower()
 
 
-def _import_nursery_reports():
-	"""Ensure Script Report rows exist before Workspace links validate (migrate module order is not guaranteed)."""
+def _import_workspace_artifacts():
+	"""Import workspace-related JSON files before sync so links do not get pruned."""
 	app_root = frappe.get_app_path("omnexa_nursery")
-	for path in sorted(glob.glob(os.path.join(app_root, "reports", "report", "*", "*.json"))):
-		if os.path.isfile(path):
-			import_file_by_path(path, force=True, ignore_version=True, reset_permissions=False)
+	target_dirs = {"page", "report", "workspace", "onboarding_step", "module_onboarding"}
+	json_paths: list[str] = []
 
+	for root, _dirs, files in os.walk(app_root):
+		parts = {part.lower() for part in root.split(os.sep)}
+		if not parts.intersection(target_dirs):
+			continue
+		for filename in files:
+			if filename.endswith(".json"):
+				json_paths.append(os.path.join(root, filename))
 
-def _import_public_workspace():
-	"""Load Workspace from module path (Frappe sync only scans ``<module>/workspace/``)."""
-	app_root = frappe.get_app_path("omnexa_nursery")
-	ws_json = os.path.join(app_root, "nursery_setup", "workspace", "nursery", "nursery.json")
-	if os.path.isfile(ws_json):
-		import_file_by_path(ws_json, force=True, ignore_version=True, reset_permissions=False)
+	for path in sorted(json_paths):
+		import_file_by_path(path, force=True, ignore_version=True, reset_permissions=False)
 
 
 def _sync_nursery_workspace_from_control_tower():
