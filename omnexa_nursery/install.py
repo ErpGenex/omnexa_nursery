@@ -43,17 +43,48 @@ def _import_workspace_artifacts():
 	for path in sorted(json_paths):
 		with open(path, encoding="utf-8") as handle:
 			payload = json.load(handle) or {}
-		if isinstance(payload, dict) and payload.get("name") and not payload.get("doctype") and "/workspace/" in path.replace("\\", "/"):
-			payload = _sanitize_workspace_payload(payload)
-			if frappe.db.exists("Workspace", payload["name"]):
-				workspace = frappe.get_doc("Workspace", payload["name"])
-				workspace.update(payload)
-				workspace.save(ignore_permissions=True)
-			else:
-				payload["doctype"] = "Workspace"
-				frappe.get_doc(payload).insert(ignore_permissions=True)
-			continue
-		import_file_by_path(path, force=True, ignore_version=True, reset_permissions=False)
+		try:
+			_import_artifact_payload(path, payload)
+		except Exception:
+			frappe.log_error("omnexa_nursery: import artifact failed", f"{path}\n{frappe.get_traceback()}")
+
+
+def _import_artifact_payload(path: str, payload: dict):
+	normalized = path.replace("\\", "/")
+	if not isinstance(payload, dict):
+		return
+
+	if normalized.endswith("/workspace/omnexa_nursery.json") or "/workspace/" in normalized:
+		name = payload.get("name") or payload.get("workspace_name") or payload.get("label")
+		if not name:
+			return
+		payload = _sanitize_workspace_payload(payload)
+		payload["doctype"] = "Workspace"
+		payload["name"] = name
+		if frappe.db.exists("Workspace", name):
+			workspace = frappe.get_doc("Workspace", name)
+			workspace.update(payload)
+			workspace.save(ignore_permissions=True)
+		else:
+			frappe.get_doc(payload).insert(ignore_permissions=True)
+		return
+
+	if "/page/" in normalized:
+		page_name = payload.get("page_name") or payload.get("name") or payload.get("route")
+		if not page_name:
+			return
+		doc = dict(payload)
+		doc["doctype"] = "Page"
+		doc["name"] = page_name
+		if frappe.db.exists("Page", page_name):
+			page = frappe.get_doc("Page", page_name)
+			page.update(doc)
+			page.save(ignore_permissions=True)
+		else:
+			frappe.get_doc(doc).insert(ignore_permissions=True)
+		return
+
+	import_file_by_path(path, force=True, ignore_version=True, reset_permissions=False)
 
 
 def _sync_nursery_workspace_from_control_tower():
