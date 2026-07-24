@@ -44,6 +44,7 @@ def _import_workspace_artifacts():
 		with open(path, encoding="utf-8") as handle:
 			payload = json.load(handle) or {}
 		if isinstance(payload, dict) and payload.get("name") and not payload.get("doctype") and "/workspace/" in path.replace("\\", "/"):
+			payload = _sanitize_workspace_payload(payload)
 			if frappe.db.exists("Workspace", payload["name"]):
 				workspace = frappe.get_doc("Workspace", payload["name"])
 				workspace.update(payload)
@@ -61,7 +62,37 @@ def _sync_nursery_workspace_from_control_tower():
 
 		sync_workspace_for_app("omnexa_nursery")
 	except Exception:
-		frappe.log_error(frappe.get_traceback(), "omnexa_nursery: sync_workspace_for_app failed")
+		frappe.log_error("omnexa_nursery: sync_workspace_for_app failed", frappe.get_traceback())
+
+
+def _workspace_target_exists(link_type: str | None, link_to: str | None) -> bool:
+	if not link_type or not link_to:
+		return False
+	if link_type == "DocType":
+		return bool(frappe.db.exists("DocType", link_to))
+	if link_type == "Report":
+		return bool(frappe.db.exists("Report", link_to))
+	if link_type == "Page":
+		return bool(frappe.db.exists("Page", link_to))
+	return True
+
+
+def _sanitize_workspace_payload(payload: dict) -> dict:
+	clean = dict(payload)
+	links = []
+	for row in clean.get("links", []) or []:
+		if row.get("type") == "Link" and not _workspace_target_exists(row.get("link_type"), row.get("link_to")):
+			continue
+		links.append(row)
+	clean["links"] = links
+
+	shortcuts = []
+	for row in clean.get("shortcuts", []) or []:
+		if row.get("type") in {"DocType", "Report", "Page"} and not _workspace_target_exists(row.get("type"), row.get("link_to")):
+			continue
+		shortcuts.append(row)
+	clean["shortcuts"] = shortcuts
+	return clean
 
 
 def _ensure_roles():
