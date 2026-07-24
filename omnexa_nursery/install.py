@@ -1,6 +1,7 @@
 # Copyright (c) 2026, ErpGenEx and contributors
 # License: MIT. See license.txt
 
+import json
 import os
 
 import frappe
@@ -40,6 +41,17 @@ def _import_workspace_artifacts():
 				json_paths.append(os.path.join(root, filename))
 
 	for path in sorted(json_paths):
+		with open(path, encoding="utf-8") as handle:
+			payload = json.load(handle) or {}
+		if isinstance(payload, dict) and payload.get("name") and not payload.get("doctype") and "/workspace/" in path.replace("\\", "/"):
+			if frappe.db.exists("Workspace", payload["name"]):
+				workspace = frappe.get_doc("Workspace", payload["name"])
+				workspace.update(payload)
+				workspace.save(ignore_permissions=True)
+			else:
+				payload["doctype"] = "Workspace"
+				frappe.get_doc(payload).insert(ignore_permissions=True)
+			continue
 		import_file_by_path(path, force=True, ignore_version=True, reset_permissions=False)
 
 
